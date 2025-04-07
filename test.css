@@ -1,0 +1,221 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 62.5%;
+}
+body{
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+}
+
+.Contents {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 80px auto 80px;
+  grid-template-columns: 300px 1fr;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer"
+  ;
+}
+@media(width <= 960px){
+  .Contents{
+    /* display: block; */
+    display: grid;
+    grid-template-rows: 80px auto auto 80px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "aside"
+      "main"
+      "footer";
+  }
+}
+@media(width <= 600px){
+  .Contents{
+    display: grid;
+    grid-template-rows: 40px auto auto 40px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "aside"
+      "main"
+      "footer";
+  }
+}
+
+
+
+header{
+  background-color: #fcff5a;
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+h2{
+  font-size: 40px;
+  font-weight: 700;
+}
+@media(width <= 960px){
+  h2{
+    font-size: 32px;
+    font-weight: 400;
+  }
+}
+@media(width <= 600px){
+  h2{
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+
+/*  */
+aside{
+  background-color: #80ffd4;
+  grid-area: aside;
+  
+}
+ul{
+  padding-top: 20px;
+  padding-left: 40px;
+}
+li a{
+  display: block;
+  font-size: 24px;
+  font-weight: 400;
+}
+@media(width <= 960px){
+  ul{
+    list-style: none;
+    padding: 16px 12px;
+    max-width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+  }
+}
+@media(width <= 600px){
+  ul{
+    max-width: 600px;
+    width: 100%;
+    padding: 20px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    column-gap: 22px;
+  }
+  li a{
+    font-size: 20px;
+    font-weight: 400;
+  }
+}
+@media(width <= 375px) {
+  ul{
+    max-width: 375px;
+    width: 100%;
+    padding: 22px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    column-gap: 30px;
+  }
+  li a{
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
+/*  */
+main{
+  background-color: #ffeecc;
+  padding: 40px 12px;
+  grid-area: main;
+  position: relative;
+}
+.form_Box{
+  width: 100%;
+  margin: 0 auto;
+}
+table{
+  width: 90%;
+  margin: 0 auto;
+}
+table th{
+  width: 30%;
+  padding: 4px 8px;
+}
+table td{
+  width: 70%;
+  padding: 4px 8px;
+}
+label,
+p{
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+input:not([type="radio"]){
+  width: 100%;
+}
+textarea{
+  line-height: 1;
+  width: 90%;
+}
+.btn{
+  position: absolute;
+  bottom: 1%;
+  right: 7%;
+}
+@media(width <= 960px){}
+@media(width <= 600px){
+  main{
+    padding-top: 20px;
+  }
+  table th,
+  table td{
+    display: block;
+    width: 100%;
+    text-align: center;
+    border-bottom: none;
+  }
+  table th{
+    padding: 8px 4px;
+  }
+  label,
+  p{
+    font-size: 16px;
+  }
+}
+@media(width <= 375px){
+  label,
+  p{
+    font-size: 14px;
+  }
+}
+
+
+/*  */
+footer{
+  background-color: #dcdcdc;
+  grid-area: footer;
+}
+@media(width <= 960px){}
+@media(width <= 600px){}
